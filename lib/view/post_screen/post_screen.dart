@@ -29,12 +29,24 @@ class _PostScreenState extends State<PostScreen> {
       return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(title: Text("Posts"), centerTitle: true, backgroundColor: Colors.white),
-        body: Obx(() {
+        body: RefreshIndicator(
+            onRefresh: () async {
+              controller.getPost();
+            },
+            child: Obx(() {
           if(controller.isLoading.value) {
             return const Center(child: CircularProgressIndicator());
           }
+          if (controller.posts.isEmpty) {
+            return const Center(
+              child: Text(
+                "No posts available",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black54),
+              ),
+            );
+          }
           return Obx(() => ListView.builder(
-            itemCount: controller.posts.isEmpty ? 5 : controller.posts.length,
+            itemCount: controller.posts.length,
             itemBuilder: (context, index) {
               PostResponse item = PostResponse();
               if(controller.posts.isNotEmpty) {
@@ -79,7 +91,7 @@ class _PostScreenState extends State<PostScreen> {
             },
           )
           );
-        })
+        }))
       );
     });
   }

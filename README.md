@@ -1,16 +1,31 @@
 # zylentrix_machine_test
-
-A new Flutter project.
+A simple Flutter project for fetching and displaying posts from an API.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Project setup instructions
+Step 1 : Clone the Repository
+    git clone <https://github.com/supr-manna/zylentrix_machine_test.git>
+Step 2: Install Dependencies
+    flutter pub get
+Step 3: Run the Application
+    flutter run
 
-A few resources to get you started if this is your first Flutter project:
+## Features implemented
+    Fetches data from an API.
+    Displays a list of posts.
+    Uses GetX for state management.
+## Libraries Used
+    GetX (get: ^4.6.6) - Manages state and dependencies.
+    HTTP (http: ^0.13.6) - Fetches data from the API.
+    Dio (dio: ^5.4.3+1) - Advanced HTTP client.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## assumptions
+    Add offline suppor
+    Enhance UI with animations
+Author
+Supriya Manna
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+

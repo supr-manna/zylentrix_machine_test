@@ -1,3 +1,4 @@
+import '../../core/utills/CustomSnackbar.dart';
 import '../../core/utills/url_container.dart';
 import '../model/post_response.dart';
 import '../services/api_service.dart';
@@ -15,8 +16,10 @@ class PostRepository {
 
     if(response.isNotEmpty) {
       print('List: ${response.length}');
+      CustomSnackbar.showCustomSnackbar(message: 'Data Successfully Fetched', isError: false);
       return response;
     } else {
+      CustomSnackbar.showCustomSnackbar(message: 'An Unknown error occurred', isError: true);
       return response;
     }
   }
